@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useAudioPlayer } from 'expo-audio';
 
-import { Button } from '../components/All';
+import { Button, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
 import { APP_THEME_COLOR } from '../utils/constants';
 import { tracks } from '../utils/data';
@@ -88,6 +88,7 @@ const Home = (): JSX.Element => {
 			<View style={styles.trackDetails}>
 				<Text style={styles.bpm}>{tracks[selection].bpm} bpm</Text>
 			</View>
+			<Tabs />
 		</View>
 	);
 };
