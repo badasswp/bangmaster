@@ -2,20 +2,7 @@ import React, { JSX } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
-import {
-	AngleLeft,
-	AngleRight,
-	ArrowLeft,
-	ArrowRight,
-	Atom,
-	Bell,
-	Close,
-	CloseCircleEmpty,
-	CloseCircleFilled,
-	FingerPrint,
-	Share,
-	Users,
-} from '../icons/All';
+import { Presets, Settings } from '../icons/All';
 
 export interface IconProps {
 	name?: string;
@@ -100,41 +87,11 @@ const Icon = ({
 	};
 
 	switch (name) {
-		case 'angle-left':
-			return <IconWrapper name={AngleLeft} />;
+		case 'presets':
+			return <IconWrapper name={Presets} />;
 
-		case 'angle-right':
-			return <IconWrapper name={AngleRight} />;
-
-		case 'arrow-left':
-			return <IconWrapper name={ArrowLeft} />;
-
-		case 'arrow-right':
-			return <IconWrapper name={ArrowRight} />;
-
-		case 'atom':
-			return <IconWrapper name={Atom} />;
-
-		case 'bell':
-			return <IconWrapper name={Bell} />;
-
-		case 'close':
-			return <IconWrapper name={Close} />;
-
-		case 'close-circle-empty':
-			return <IconWrapper name={CloseCircleEmpty} />;
-
-		case 'close-circle-filled':
-			return <IconWrapper name={CloseCircleFilled} />;
-
-		case 'fingerprint':
-			return <IconWrapper name={FingerPrint} />;
-
-		case 'share':
-			return <IconWrapper name={Share} />;
-
-		case 'users':
-			return <IconWrapper name={Users} />;
+		case 'settings':
+			return <IconWrapper name={Settings} />;
 
 		default:
 			return null;

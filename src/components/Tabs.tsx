@@ -6,11 +6,11 @@ const Tabs = () => {
 	return (
 		<View style={styles.tabs}>
 			<Pressable style={styles.tab}>
-				<Icon name="users" color="#fff"></Icon>
+				<Icon name="presets" color="#fff"></Icon>
 				<Text style={styles.tabText}>Presets</Text>
 			</Pressable>
 			<Pressable style={styles.tab}>
-				<Icon name="users" color="#fff"></Icon>
+				<Icon name="settings" color="#fff"></Icon>
 				<Text style={styles.tabText}>Settings</Text>
 			</Pressable>
 		</View>
