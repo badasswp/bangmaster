@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Home } from '../screens/All';
+import { Home, Presets, Settings } from '../screens/All';
 
 /**
  * App component.
@@ -27,6 +27,8 @@ const App = (): JSX.Element => {
 				}}
 			>
 				<Stack.Screen name="Home" component={Home} />
+				<Stack.Screen name="Presets" component={Presets} />
+				<Stack.Screen name="Settings" component={Settings} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

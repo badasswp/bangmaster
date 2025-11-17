@@ -6,6 +6,8 @@ import { Icon } from '../components/All';
 
 type RootStackParamList = {
 	Home: undefined;
+	Presets: undefined;
+	Settings: undefined;
 };
 
 type TabNavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -15,11 +17,17 @@ const Tabs = () => {
 
 	return (
 		<View style={styles.tabs}>
-			<Pressable style={styles.tab} onPress={() => navigation.navigate('Home')}>
+			<Pressable
+				style={styles.tab}
+				onPress={() => navigation.navigate('Presets')}
+			>
 				<Icon name="presets" color="#fff"></Icon>
 				<Text style={styles.tabText}>Presets</Text>
 			</Pressable>
-			<Pressable style={styles.tab} onPress={() => navigation.navigate('Home')}>
+			<Pressable
+				style={styles.tab}
+				onPress={() => navigation.navigate('Settings')}
+			>
 				<Icon name="settings" color="#fff"></Icon>
 				<Text style={styles.tabText}>Settings</Text>
 			</Pressable>
