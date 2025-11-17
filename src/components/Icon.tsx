@@ -46,6 +46,7 @@ const Icon = ({
 	const containerDefaultStyles = {
 		alignItems: 'center',
 		justifyContent: 'center',
+		marginTop: -5,
 	};
 
 	const containerWrapperStyles = {
