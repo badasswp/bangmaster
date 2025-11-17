@@ -1,8 +1,8 @@
-import React, { JSX, useState } from 'react';
+import React, { JSX, useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Text } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Audio } from 'expo-av';
+import { useAudioPlayer } from 'expo-audio';
 
 import { Button } from '../components/All';
 import { getAppFont } from '../utils/fonts';
@@ -26,45 +26,33 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 const Home = (): JSX.Element => {
 	const navigation = useNavigation<HomeScreenNavigationProp>();
 	const [isPlaying, setIsPlaying] = useState(false);
-	const [track, setTrack] = useState<Audio.Sound | null>();
+	const [track, setTrack] = useState<any>();
 	const [selection, setSelection] = useState<number>(0);
+	const player = useAudioPlayer(track);
 
-	const stopPlay = () => {
-		track?.pauseAsync();
-		setIsPlaying(false);
-	};
-
-	const restartPlay = async () => {
-		stopPlay();
-		await handlePlay();
-	};
+	useEffect(() => {
+		const track = tracks[selection].beat;
+		setTrack(track);
+	}, [selection]);
 
 	const handlePlay = async () => {
 		if (isPlaying) {
-			stopPlay();
+			player.pause();
 			return;
 		}
 
-		const { sound } = await Audio.Sound.createAsync(tracks[selection].beat, {
-			rate: 1.0,
-			isLooping: true,
-			volume: 1.0,
-		});
-
-		await sound.playAsync();
-
-		setTrack(sound);
+		player.play();
 		setIsPlaying(true);
 	};
 
 	const handlePrev = async () => {
 		setSelection(selection => selection - 1);
-		await restartPlay();
+		player.pause();
 	};
 
 	const handleNext = async () => {
 		setSelection(selection => selection + 1);
-		await restartPlay();
+		player.pause();
 	};
 
 	return (
