@@ -35,24 +35,38 @@ const Home = (): JSX.Element => {
 		setTrack(track);
 	}, [selection]);
 
+	const startPlay = () => {
+		setIsPlaying(true);
+		player.seekTo(0);
+		player.play();
+	};
+
+	const stopPlay = () => {
+		setIsPlaying(false);
+		player.pause();
+	};
+
 	const handlePlay = async () => {
 		if (isPlaying) {
-			player.pause();
+			stopPlay();
 			return;
 		}
 
-		player.play();
-		setIsPlaying(true);
+		player.playbackRate = 1.0;
+		player.loop = true;
+		player.volume = 1.0;
+
+		startPlay();
 	};
 
 	const handlePrev = async () => {
 		setSelection(selection => selection - 1);
-		player.pause();
+		stopPlay();
 	};
 
 	const handleNext = async () => {
 		setSelection(selection => selection + 1);
-		player.pause();
+		stopPlay();
 	};
 
 	return (
