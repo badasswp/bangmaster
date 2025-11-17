@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import { Icon } from '../components/All';
+import Icon from '../components/Icon';
 
 type RootStackParamList = {
 	Home: undefined;
