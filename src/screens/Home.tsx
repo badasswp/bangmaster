@@ -94,7 +94,8 @@ const Home = (): JSX.Element => {
 	 * @returns {void}
 	 */
 	const handleNext = (): void => {
-		setSelection(selection + 1);
+		const track = selection + 1;
+		setSelection(track < tracks.length ? track : 0);
 		stopPlay();
 	};
 
@@ -104,7 +105,8 @@ const Home = (): JSX.Element => {
 	 * @returns {void}
 	 */
 	const handlePrev = (): void => {
-		setSelection(selection - 1);
+		const track = selection - 1;
+		setSelection(track > -1 ? track : tracks.length - 1);
 		stopPlay();
 	};
 
