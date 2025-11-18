@@ -7,8 +7,8 @@ import Icon from './Icon';
 import { getAppFont } from '../utils/fonts';
 
 interface TrackProps {
-	name?: string;
 	bpm?: number;
+	name?: string;
 }
 
 type RootStackParamList = {
@@ -17,6 +17,18 @@ type RootStackParamList = {
 
 type TrackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
+/**
+ * Track component.
+ *
+ * This component is used to display the track
+ * shown on the scrollview list items in the Presets screen.
+ *
+ * @param {TrackProps} props      Track props.
+ * @param {string}     props.name Name of the Track.
+ * @param {number}     props.bpm  Beats per minute for track.
+ *
+ * @returns {JSX.Element | null} The Track component.
+ */
 const Track = ({ name, bpm }: TrackProps): JSX.Element => {
 	const navigation = useNavigation<TrackNavigationProp>();
 

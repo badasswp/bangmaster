@@ -1,3 +1,4 @@
+import React, { JSX } from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -12,7 +13,15 @@ type RootStackParamList = {
 
 type TabNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
-const Tabs = () => {
+/**
+ * Tabs component.
+ *
+ * This component is used to display the tabs
+ * for the home screen.
+ *
+ * @returns {JSX.Element | null} The Tabs component.
+ */
+const Tabs = (): JSX.Element => {
 	const navigation = useNavigation<TabNavigationProp>();
 
 	return (
