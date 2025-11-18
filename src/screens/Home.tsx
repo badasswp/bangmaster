@@ -7,7 +7,7 @@ import { useAudioPlayer } from 'expo-audio';
 import { Button, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
 import { APP_THEME_COLOR } from '../utils/constants';
-import { tracks } from '../utils/data';
+import { TrackProps, tracks } from '../utils/data';
 import useSelection from '../store/hooks/useSelection';
 
 type RootStackParamList = {
@@ -26,16 +26,22 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  */
 const Home = (): JSX.Element => {
 	const navigation = useNavigation<HomeScreenNavigationProp>();
-	const [isPlaying, setIsPlaying] = useState(false);
-	const [track, setTrack] = useState<any>();
+
 	const { selection, setSelection } = useSelection();
-	const player = useAudioPlayer(track);
+	const [track, setTrack] = useState<TrackProps>(tracks[selection]);
+	const [isPlaying, setIsPlaying] = useState(false);
+
+	const player = useAudioPlayer(track.beat);
+	const [bpm, setBpm] = useState(track.bpm);
 
 	useEffect(() => {
-		const track = tracks[selection].beat;
-		setTrack(track);
+		setTrack(tracks[selection]);
 		stopPlay();
 	}, [selection]);
+
+	useEffect(() => {
+		player.setPlaybackRate(bpm / track.bpm, 'high');
+	}, [bpm]);
 
 	/**
 	 * Start Play.
@@ -79,25 +85,30 @@ const Home = (): JSX.Element => {
 			return;
 		}
 
-		player.playbackRate = 1.0;
 		player.loop = true;
-		player.volume = 1.0;
-
 		startPlay();
 	};
 
 	/**
-	 * Increment Selection.
+	 * Increment Tempo.
 	 *
 	 * @returns {void}
 	 */
-	const handlePrev = (): void => {
-		setSelection(selection - 1);
-		stopPlay();
+	const increaseTempo = (): void => {
+		setBpm((bpm: number) => bpm + 1);
 	};
 
 	/**
-	 * Decrement Selection.
+	 * Decrease Tempo.
+	 *
+	 * @returns {void}
+	 */
+	const decreaseTempo = (): void => {
+		setBpm((bpm: number) => bpm - 1);
+	};
+
+	/**
+	 * Next Selection.
 	 *
 	 * @returns {void}
 	 */
@@ -106,11 +117,25 @@ const Home = (): JSX.Element => {
 		stopPlay();
 	};
 
+	/**
+	 * Previous Selection.
+	 *
+	 * @returns {void}
+	 */
+	const handlePrev = (): void => {
+		setSelection(selection - 1);
+		stopPlay();
+	};
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.trackDetails}>
-				<Text style={styles.trackName}>{tracks[selection].name}</Text>
-				<Text style={styles.trackDuration}>{tracks[selection].duration}</Text>
+				<Text style={styles.trackName}>{track.name}</Text>
+				<Text style={styles.trackDuration}>{track.duration}</Text>
+			</View>
+			<View style={{ ...styles.trackButtons, gap: 60, marginBottom: -30 }}>
+				<Button style={styles.smallButtons} text="<" onClick={decreaseTempo} />
+				<Button style={styles.smallButtons} text=">" onClick={increaseTempo} />
 			</View>
 			<View style={styles.trackButtons}>
 				<Button text="-" onClick={handlePrev} />
@@ -123,7 +148,7 @@ const Home = (): JSX.Element => {
 				<Button text="+" onClick={handleNext} />
 			</View>
 			<View style={styles.trackDetails}>
-				<Text style={styles.bpm}>{tracks[selection].bpm} bpm</Text>
+				<Text style={styles.bpm}>{bpm} bpm</Text>
 			</View>
 			<Tabs />
 		</View>
@@ -180,6 +205,11 @@ const styles = StyleSheet.create({
 		fontSize: 56,
 		fontWeight: 300,
 		textAlign: 'center',
+	},
+
+	smallButtons: {
+		width: 75,
+		height: 75,
 	},
 });
 
