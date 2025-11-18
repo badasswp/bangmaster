@@ -6,6 +6,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Track } from '../components/All';
 import { APP_THEME_COLOR } from '../utils/constants';
 import { tracks } from '../utils/data';
+import { getAppFont } from '../utils/fonts';
 
 type RootStackParamList = {
 	Home: undefined;
@@ -27,18 +28,23 @@ const Presets = (): JSX.Element => {
 
 	return (
 		<View style={styles.container}>
-			<Pressable onPress={() => navigation.goBack()}>
-				<Text>Back</Text>
-			</Pressable>
-			<ScrollView
-				alwaysBounceVertical={true}
-				showsVerticalScrollIndicator={false}
-			>
-				{tracks &&
-					tracks.map(({ name, bpm }, index) => (
-						<Track key={index} name={name} bpm={bpm}></Track>
-					))}
-			</ScrollView>
+			<View style={styles.header}>
+				<Text style={styles.caption}>Presets</Text>
+				<View style={styles.titleContainer}>
+					<Text style={styles.title}>Select A Track</Text>
+				</View>
+			</View>
+			<View style={styles.body}>
+				<ScrollView
+					alwaysBounceVertical={true}
+					showsVerticalScrollIndicator={false}
+				>
+					{tracks &&
+						tracks.map(({ name, bpm }, index) => (
+							<Track key={index} name={name} bpm={bpm}></Track>
+						))}
+				</ScrollView>
+			</View>
 		</View>
 	);
 };
@@ -47,8 +53,37 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: APP_THEME_COLOR,
-		gap: 20,
-		paddingVertical: 100,
+	},
+
+	header: {
+		flex: 0.5,
+		backgroundColor: '#2d2b43',
+		paddingTop: 75,
+		paddingLeft: 20,
+	},
+
+	caption: {
+		fontSize: 36,
+		fontWeight: 700,
+		fontFamily: getAppFont('400'),
+		color: '#fff',
+	},
+
+	titleContainer: {
+		position: 'absolute',
+		right: 0,
+		bottom: 10,
+		left: 0,
+	},
+
+	title: {
+		color: '#fff',
+		textAlign: 'center',
+		fontSize: 18,
+	},
+
+	body: {
+		flex: 3,
 	},
 });
 
