@@ -1,7 +1,9 @@
 import React, { JSX } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Pressable, Text } from 'react-native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StyleSheet, Pressable, View, Text } from 'react-native';
 
+import Icon from './Icon';
 import { getAppFont } from '../utils/fonts';
 
 interface TrackProps {
@@ -9,11 +11,32 @@ interface TrackProps {
 	bpm?: number;
 }
 
+type RootStackParamList = {
+	Home: undefined;
+};
+
+type TrackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+
 const Track = ({ name, bpm }: TrackProps): JSX.Element => {
+	const navigation = useNavigation<TrackNavigationProp>();
+
+	const handlePress = () => {
+		navigation.goBack();
+	};
+
 	return (
-		<Pressable style={styles.container} onPress={() => {}}>
+		<Pressable style={styles.container} onPress={handlePress}>
 			<Text style={styles.name}>{name}</Text>
-			<Text style={styles.bpm}>Tempo: {bpm} bpm</Text>
+			<View style={styles.details}>
+				<Icon
+					name="presets"
+					height={18}
+					weight={0.5}
+					containerStyles={{ marginTop: 0 }}
+					color="#fff"
+				></Icon>
+				<Text style={styles.bpm}>Tempo: {bpm} bpm</Text>
+			</View>
 		</Pressable>
 	);
 };
@@ -25,16 +48,26 @@ const styles = StyleSheet.create({
 		borderTopWidth: 1,
 		borderTopColor: '#504f65',
 		padding: 20,
+		gap: 3,
 	},
 
 	name: {
 		color: '#fff',
+		fontSize: 18,
 		fontFamily: getAppFont('400'),
+		fontWeight: 400,
+	},
+
+	details: {
+		flexDirection: 'row',
+		alignItems: 'center',
 	},
 
 	bpm: {
 		color: '#fff',
+		fontSize: 16,
 		fontFamily: getAppFont('400'),
+		fontWeight: 400,
 		opacity: 0.3,
 	},
 });
