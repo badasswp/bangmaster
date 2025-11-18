@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Text } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useAudioPlayer } from 'expo-audio';
+import Slider from '@react-native-community/slider';
 
 import { Button, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
@@ -38,10 +39,6 @@ const Home = (): JSX.Element => {
 		setTrack(tracks[selection]);
 		stopPlay();
 	}, [selection]);
-
-	useEffect(() => {
-		player.setPlaybackRate(bpm / track.bpm, 'high');
-	}, [bpm]);
 
 	/**
 	 * Start Play.
@@ -86,25 +83,8 @@ const Home = (): JSX.Element => {
 		}
 
 		player.loop = true;
+		player.setPlaybackRate(bpm / track.bpm, 'high');
 		startPlay();
-	};
-
-	/**
-	 * Increment Tempo.
-	 *
-	 * @returns {void}
-	 */
-	const increaseTempo = (): void => {
-		setBpm((bpm: number) => bpm + 1);
-	};
-
-	/**
-	 * Decrease Tempo.
-	 *
-	 * @returns {void}
-	 */
-	const decreaseTempo = (): void => {
-		setBpm((bpm: number) => bpm - 1);
 	};
 
 	/**
@@ -133,10 +113,6 @@ const Home = (): JSX.Element => {
 				<Text style={styles.trackName}>{track.name}</Text>
 				<Text style={styles.trackDuration}>{track.duration}</Text>
 			</View>
-			<View style={{ ...styles.trackButtons, gap: 60, marginBottom: -30 }}>
-				<Button style={styles.smallButtons} text="<" onClick={decreaseTempo} />
-				<Button style={styles.smallButtons} text=">" onClick={increaseTempo} />
-			</View>
 			<View style={styles.trackButtons}>
 				<Button text="-" onClick={handlePrev} />
 				<Button
@@ -148,7 +124,14 @@ const Home = (): JSX.Element => {
 				<Button text="+" onClick={handleNext} />
 			</View>
 			<View style={styles.trackDetails}>
-				<Text style={styles.bpm}>{bpm} bpm</Text>
+				<Text style={styles.bpm}>{Math.ceil(bpm)} bpm</Text>
+			</View>
+			<View style={styles.trackTempo}>
+				<Slider
+					minimumValue={track.bpm - 100}
+					maximumValue={track.bpm + 100}
+					onValueChange={value => setBpm(value)}
+				/>
 			</View>
 			<Tabs />
 		</View>
@@ -189,6 +172,11 @@ const styles = StyleSheet.create({
 		gap: 10,
 	},
 
+	trackTempo: {
+		width: '100%',
+		paddingHorizontal: 50,
+	},
+
 	playIcon: {
 		width: 50,
 		height: 50,
@@ -205,11 +193,6 @@ const styles = StyleSheet.create({
 		fontSize: 56,
 		fontWeight: 300,
 		textAlign: 'center',
-	},
-
-	smallButtons: {
-		width: 75,
-		height: 75,
 	},
 });
 
