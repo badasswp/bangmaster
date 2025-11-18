@@ -7,7 +7,7 @@ import Slider from '@react-native-community/slider';
 
 import { Button, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
-import { APP_THEME_COLOR } from '../utils/constants';
+import { APP_BUTTON_COLOR, APP_THEME_COLOR } from '../utils/constants';
 import { TrackProps, tracks } from '../utils/data';
 import useSelection from '../store/hooks/useSelection';
 
@@ -134,7 +134,7 @@ const Home = (): JSX.Element => {
 					value={track.bpm}
 					onValueChange={value => setBpm(value)}
 					step={1}
-					thumbTintColor="#222435"
+					thumbTintColor={APP_BUTTON_COLOR}
 					minimumTrackTintColor="red"
 					maximumTrackTintColor="black"
 				/>

@@ -12,6 +12,7 @@ export const APP_FONT_SIZE = 16;
  * @module APP_LABEL
  */
 export const APP_THEME_COLOR = '#3c3b52';
+export const APP_BUTTON_COLOR = '#222435';
 export const APP_LABEL_FONT_SIZE = 15;
 export const APP_LABEL_MARGIN_BOTTOM = 8;
 

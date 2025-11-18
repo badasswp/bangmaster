@@ -3,7 +3,7 @@ import { Pressable, Text, Platform, StyleSheet } from 'react-native';
 
 import Icon from './Icon';
 import { getAppFont } from '../utils/fonts';
-import { APP_FONT_SIZE } from '../utils/constants';
+import { APP_BUTTON_COLOR, APP_FONT_SIZE } from '../utils/constants';
 
 export interface ButtonProps {
 	id?: string;
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
 		borderRadius: '100%',
 		borderColor: '#000',
 		borderWidth: 10,
-		backgroundColor: '#222435',
+		backgroundColor: APP_BUTTON_COLOR,
 		boxShadow:
 			'0px 4px 8px rgba(0, 0, 0, 0.6), inset 0px 2px 3px rgba(255, 255, 255, 0.1)',
 	},
