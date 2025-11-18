@@ -28,6 +28,7 @@ type TrackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  * @param {TrackProps} props      Track props.
  * @param {string}     props.name Name of the Track.
  * @param {number}     props.bpm  Beats per minute for track.
+ * @param {number}     props.idx  Index of selected track.
  *
  * @returns {JSX.Element} The Track component.
  */
