@@ -41,7 +41,7 @@ const Presets = (): JSX.Element => {
 				>
 					{tracks &&
 						tracks.map(({ name, bpm }, index) => (
-							<Track key={index} name={name} bpm={bpm}></Track>
+							<Track key={index} idx={index} name={name} bpm={bpm}></Track>
 						))}
 				</ScrollView>
 			</View>
