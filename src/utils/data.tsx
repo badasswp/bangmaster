@@ -1,4 +1,12 @@
-export const tracks = [
+export interface TrackProps {
+	name: string;
+	beat: string;
+	bpm: number;
+	duration: string;
+	category: string;
+}
+
+export const tracks: TrackProps[] = [
 	{
 		name: 'Worship Beat',
 		beat: require('../../beats/worship.wav'),
