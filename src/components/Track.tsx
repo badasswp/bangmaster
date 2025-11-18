@@ -5,8 +5,10 @@ import { StyleSheet, Pressable, View, Text } from 'react-native';
 
 import Icon from './Icon';
 import { getAppFont } from '../utils/fonts';
+import useSelection from '../store/hooks/useSelection';
 
 interface TrackProps {
+	idx?: number;
 	bpm?: number;
 	name?: string;
 }
@@ -29,10 +31,12 @@ type TrackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  *
  * @returns {JSX.Element} The Track component.
  */
-const Track = ({ name, bpm }: TrackProps): JSX.Element => {
+const Track = ({ idx = 0, name, bpm }: TrackProps): JSX.Element => {
 	const navigation = useNavigation<TrackNavigationProp>();
+	const { setSelection } = useSelection();
 
 	const handlePress = () => {
+		setSelection(idx);
 		navigation.goBack();
 	};
 

@@ -8,6 +8,7 @@ import { Button, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
 import { APP_THEME_COLOR } from '../utils/constants';
 import { tracks } from '../utils/data';
+import useSelection from '../store/hooks/useSelection';
 
 type RootStackParamList = {
 	Home: undefined;
@@ -27,7 +28,7 @@ const Home = (): JSX.Element => {
 	const navigation = useNavigation<HomeScreenNavigationProp>();
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [track, setTrack] = useState<any>();
-	const [selection, setSelection] = useState<number>(0);
+	const { selection, setSelection } = useSelection();
 	const player = useAudioPlayer(track);
 
 	useEffect(() => {
@@ -60,12 +61,12 @@ const Home = (): JSX.Element => {
 	};
 
 	const handlePrev = async () => {
-		setSelection(selection => selection - 1);
+		setSelection(selection - 1);
 		stopPlay();
 	};
 
 	const handleNext = async () => {
-		setSelection(selection => selection + 1);
+		setSelection(selection + 1);
 		stopPlay();
 	};
 
