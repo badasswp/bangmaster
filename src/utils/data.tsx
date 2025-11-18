@@ -20,4 +20,11 @@ export const tracks = [
 		duration: '00:01',
 		category: 'Gospel',
 	},
+	{
+		name: 'Rock Praise',
+		beat: require('../../beats/rock-praise.wav'),
+		bpm: 156,
+		duration: '00:03',
+		category: 'Gospel',
+	},
 ];
