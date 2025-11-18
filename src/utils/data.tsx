@@ -13,4 +13,11 @@ export const tracks = [
 		duration: '00:02',
 		category: 'Gospel',
 	},
+	{
+		name: 'Praise Groove',
+		beat: require('../../beats/praise-groove.wav'),
+		bpm: 120,
+		duration: '00:01',
+		category: 'Gospel',
+	},
 ];
