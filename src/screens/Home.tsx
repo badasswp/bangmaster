@@ -37,6 +37,7 @@ const Home = (): JSX.Element => {
 
 	useEffect(() => {
 		setTrack(tracks[selection]);
+		setBpm(tracks[selection].bpm);
 		stopPlay();
 	}, [selection]);
 
@@ -124,13 +125,18 @@ const Home = (): JSX.Element => {
 				<Button text="+" onClick={handleNext} />
 			</View>
 			<View style={styles.trackDetails}>
-				<Text style={styles.bpm}>{Math.ceil(bpm)} bpm</Text>
+				<Text style={styles.bpm}>{bpm} bpm</Text>
 			</View>
 			<View style={styles.trackTempo}>
 				<Slider
 					minimumValue={track.bpm - 100}
 					maximumValue={track.bpm + 100}
+					value={track.bpm}
 					onValueChange={value => setBpm(value)}
+					step={1}
+					thumbTintColor="#222435"
+					minimumTrackTintColor="red"
+					maximumTrackTintColor="black"
 				/>
 			</View>
 			<Tabs />
