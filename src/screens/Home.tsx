@@ -34,6 +34,7 @@ const Home = (): JSX.Element => {
 	useEffect(() => {
 		const track = tracks[selection].beat;
 		setTrack(track);
+		stopPlay();
 	}, [selection]);
 
 	/**
