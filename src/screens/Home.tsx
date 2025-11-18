@@ -36,18 +36,43 @@ const Home = (): JSX.Element => {
 		setTrack(track);
 	}, [selection]);
 
-	const startPlay = () => {
+	/**
+	 * Start Play.
+	 *
+	 * This method resets the player to the
+	 * starting point of the track and then proceeds
+	 * to play the beat.
+	 *
+	 * @returns {void}
+	 */
+	const startPlay = (): void => {
 		setIsPlaying(true);
 		player.seekTo(0);
 		player.play();
 	};
 
-	const stopPlay = () => {
+	/**
+	 * Stop Play.
+	 *
+	 * This method stops the player and
+	 * updates the play state.
+	 *
+	 * @returns {void}
+	 */
+	const stopPlay = (): void => {
 		setIsPlaying(false);
 		player.pause();
 	};
 
-	const handlePlay = async () => {
+	/**
+	 * Handle Play.
+	 *
+	 * This method handles the play/pause
+	 * functionality of the play button.
+	 *
+	 * @returns {void}
+	 */
+	const handlePlay = (): void => {
 		if (isPlaying) {
 			stopPlay();
 			return;
@@ -60,12 +85,22 @@ const Home = (): JSX.Element => {
 		startPlay();
 	};
 
-	const handlePrev = async () => {
+	/**
+	 * Increment Selection.
+	 *
+	 * @returns {void}
+	 */
+	const handlePrev = (): void => {
 		setSelection(selection - 1);
 		stopPlay();
 	};
 
-	const handleNext = async () => {
+	/**
+	 * Decrement Selection.
+	 *
+	 * @returns {void}
+	 */
+	const handleNext = (): void => {
 		setSelection(selection + 1);
 		stopPlay();
 	};
