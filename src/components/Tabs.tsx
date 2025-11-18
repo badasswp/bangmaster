@@ -19,7 +19,7 @@ type TabNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  * This component is used to display the tabs
  * for the home screen.
  *
- * @returns {JSX.Element | null} The Tabs component.
+ * @returns {JSX.Element} The Tabs component.
  */
 const Tabs = (): JSX.Element => {
 	const navigation = useNavigation<TabNavigationProp>();
