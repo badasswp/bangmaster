@@ -199,8 +199,8 @@ const styles = StyleSheet.create({
 	},
 
 	playIcon: {
-		width: 50,
-		height: 50,
+		width: 75,
+		height: 75,
 	},
 
 	playButton: {
