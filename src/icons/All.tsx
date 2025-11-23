@@ -1,4 +1,6 @@
-import Settings from './Settings';
+import Play from './Play';
 import Presets from './Presets';
+import Settings from './Settings';
+import Stop from './Stop';
 
-export { Settings, Presets };
+export { Play, Presets, Settings, Stop };
