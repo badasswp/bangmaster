@@ -123,7 +123,7 @@ const Home = (): JSX.Element => {
 					textStyles={styles.trackButtonTempo}
 				/>
 				<Button
-					icon={isPlaying ? 'settings' : 'presets'}
+					icon={isPlaying ? 'stop' : 'play'}
 					iconStyles={styles.playIcon}
 					style={styles.playButton}
 					onClick={handlePlay}

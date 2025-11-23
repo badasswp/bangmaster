@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
-import { Presets, Settings } from '../icons/All';
+import { Play, Presets, Settings, Stop } from '../icons/All';
 
 export interface IconProps {
 	name?: string;
@@ -88,11 +88,17 @@ const Icon = ({
 	};
 
 	switch (name) {
+		case 'play':
+			return <IconWrapper name={Play} />;
+
 		case 'presets':
 			return <IconWrapper name={Presets} />;
 
 		case 'settings':
 			return <IconWrapper name={Settings} />;
+
+		case 'stop':
+			return <IconWrapper name={Stop} />;
 
 		default:
 			return null;
