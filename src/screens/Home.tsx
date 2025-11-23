@@ -117,14 +117,22 @@ const Home = (): JSX.Element => {
 				<Text style={styles.trackDuration}>{track.duration}</Text>
 			</View>
 			<View style={styles.trackButtons}>
-				<Button text="-" onClick={handlePrev} />
+				<Button
+					text="-"
+					onClick={handlePrev}
+					textStyles={styles.trackButtonTempo}
+				/>
 				<Button
 					text={isPlaying ? 'Stop' : 'Play'}
 					iconStyles={styles.playIcon}
 					style={styles.playButton}
 					onClick={handlePlay}
 				/>
-				<Button text="+" onClick={handleNext} />
+				<Button
+					text="+"
+					onClick={handleNext}
+					textStyles={styles.trackButtonTempo}
+				/>
 			</View>
 			<View style={styles.trackDetails}>
 				<Text style={styles.bpm}>{bpm} bpm</Text>
@@ -178,6 +186,11 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		gap: 10,
+	},
+
+	trackButtonTempo: {
+		fontSize: 36,
+		fontWeight: 700,
 	},
 
 	trackTempo: {
