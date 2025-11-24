@@ -123,10 +123,11 @@ const Home = (): JSX.Element => {
 					textStyles={styles.trackButtonTempo}
 				/>
 				<Button
-					icon={isPlaying ? 'stop' : 'play'}
+					text={isPlaying ? 'Stop' : 'Play'}
 					iconStyles={styles.playIcon}
 					style={styles.playButton}
 					onClick={handlePlay}
+					textStyles={styles.playButtonText}
 				/>
 				<Button
 					text="+"
@@ -206,6 +207,10 @@ const styles = StyleSheet.create({
 	playButton: {
 		width: 160,
 		height: 160,
+	},
+
+	playButtonText: {
+		fontSize: 28,
 	},
 
 	bpm: {
