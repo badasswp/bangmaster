@@ -42,5 +42,4 @@ export default ButtonDemo;
 - icon _`{string}`_ By default, this would be the name of the icon of the `Icon` component in the button(Optional).
 - iconStyles _`{Object}`_ By default, this would be an object that overrides the current inline styles of the `Icon` component in the button (Optional).
 - onClick _`{function}`_ By default, this would be a callback function that is called whenever the clicked event is fired (Optional).
-- weight _`{string}`_ By default, this would be a string that represents the weight of the button text (Optional).
   <br/>
