@@ -7,3 +7,4 @@ This documentation serves as a guide and reference point for developers working 
 - [Components](./components/README.md)
   - [Button](./components/README.md#button)
   - [Icon](./components/README.md#icon)
+  - [Tabs](./components/README.md#tabs)
