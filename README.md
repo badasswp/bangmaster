@@ -10,6 +10,15 @@ It provides an alternative and easy drum sampler to assist with backtracks for p
 
 You don't have to carry your laptop anymore for backtrack performances. Save yourself the stress and also protect your laptop against theft during transit.
 
+## Screenshots
+
+Here are some screenshots of BangMaster in action:
+
+<img src="assets/images/Bangmaster.png" width="300"/>
+<br/>
+<img src="assets/images/Bangmaster-presets.png" width="300"/>
+
+
 ## Project Structure
 
 ```bash
