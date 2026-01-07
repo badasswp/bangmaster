@@ -4,6 +4,32 @@ The Ultimate Drum Loops Machine & Sampler for live performance and recording.
 
 Bangmaster provides an easy and alternative way to help drummers perform their favourite tracks using loops. Ideal for concert, live, church, school, military performances and so on.
 
+---
+
+<table>
+  <tr>
+    <td>
+      <img src="assets/images/screenshot-1.webp" width="300">
+    </td>
+    <td>
+      <img src="assets/images/screenshot-2.webp" width="300">
+    </td>
+  </tr>
+</table>
+
+---
+
+<table>
+  <tr>
+    <td>
+      <img src="assets/images/screenshot-3.webp" width="300">
+    </td>
+    <td>
+      <img src="assets/images/screenshot-5.webp" width="300">
+    </td>
+  </tr>
+</table>
+
 ## Why BangMaster?
 
 It provides an alternative and easy drum sampler to assist with backtracks for performances.
