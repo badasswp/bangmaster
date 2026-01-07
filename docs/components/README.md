@@ -6,6 +6,7 @@ This section documents the reusable components available in the project. Each co
 
 - [Button](#button)
 - [Icon](#icon)
+- [Tabs](#tabs)
 
 ## Button
 
@@ -85,3 +86,24 @@ export default IconDemo;
 - containerStyles _`{Object}`_ This represents the inline styles to override the styles of the icon container.
 - weight _`{number}`_ This represents the weight of the icon.
   <br/>
+
+## Tabs
+
+The **Tabs** component provides a reusable interface for displaying and navigating between specific tabs—namely `Presets` and `Settings` — from the default `Home` screen. It uses React Native’s `useNavigation` hook with a custom, strongly typed parameter that extends `NativeStackNavigationProps` and is based on a defined root stack parameter list. This ensures type-safe navigation by validating route names and parameters at compile time.
+Internally, the component is built using a custom `Icon` component alongside React Native’s `Text` and `Pressable` components, all wrapped within a `View` to create an interactive and accessible tab layout.
+
+
+### How To Use
+
+```jsx
+import { Tabs } from './src/components/All';
+
+const  TabsDemo = (): JSX.Element => {
+  return (
+    <View>
+      <Tabs />
+    </View>
+  );
+}
+
+export default TabsDemo;
