@@ -8,3 +8,4 @@ This documentation serves as a guide and reference point for developers working 
   - [Button](./components/README.md#button)
   - [Icon](./components/README.md#icon)
   - [Tabs](./components/README.md#tabs)
+  - [Track](./components/README.md#track)
