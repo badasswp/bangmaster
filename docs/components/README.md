@@ -130,7 +130,7 @@ interface TrackProps {
 const  TrackDemo = ({idx=0, name, bpm}: TrackProps): JSX.Element => {
   return (
     <View>
-      <Track idx={index} name={name} bpm={bpm} />
+      <Track idx={idx} name={name} bpm={bpm} />
     </View>
   );
 }
