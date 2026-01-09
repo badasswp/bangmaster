@@ -90,6 +90,7 @@ export default IconDemo;
 ## Tabs
 
 The **Tabs** component provides a reusable interface for displaying and navigating between specific tabs—namely `Presets` and `Settings` — from the default `Home` screen. It uses React Native’s `useNavigation` hook with a custom, strongly typed parameter that extends `NativeStackNavigationProps` and is based on a defined root stack parameter list. This ensures type-safe navigation by validating route names and parameters at compile time.
+
 Internally, the component is built using a custom `Icon` component alongside React Native’s `Text` and `Pressable` components, all wrapped within a `View` to create an interactive and accessible tab layout.
 
 ### How To Use
