@@ -111,7 +111,6 @@ export default TabsDemo;
 ## Track
 
 The **Track** component provides a reusable interface for displaying and selecting individual tracks from the track list on the `Presets` screen. It accepts the props `idx`, `name`, and `bpm`, which represent the track’s position in the list, its title, and its tempo (beats per minute), respectively.
-The component leverages React Native’s `useNavigation` hook with a custom, strongly typed parameter that extends `NativeStackNavigationProps` and is derived from a defined root stack parameter list. This enables type-safe navigation by validating route names and parameters at compile time, as well as supporting backward navigation when a track is selected.
 Internally, the component is composed using a custom Icon component alongside React Native’s Text and View components, all wrapped within a Pressable. Styling is applied via the `StyleSheet` API to create an interactive, accessible, and visually consistent layout for track selection.
 
 ### How To Use
