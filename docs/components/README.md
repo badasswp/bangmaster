@@ -7,6 +7,7 @@ This section documents the reusable components available in the project. Each co
 - [Button](#button)
 - [Icon](#icon)
 - [Tabs](#tabs)
+- [Track](#track)
 
 ## Button
 
@@ -49,8 +50,8 @@ export default ButtonDemo;
 ## Icon
 
 The **Icon** component offers a reusable abstraction for rendering a variety of icons across the application. It supports the props `name`, `color`, `width`, `height`, `styles`, `containerStyles`, and `weight`, allowing for flexible customization and styling.
-Internally, the component renders an Svg element wrapped within a React Native `View`, all encapsulated by a custom `IconWrapper` component. This structure ensures consistent layout, styling, and icon behavior throughout the application.
 
+Internally, the component renders an Svg element wrapped within a React Native `View`, all encapsulated by a custom `IconWrapper` component. This structure ensures consistent layout, styling, and icon behavior throughout the application.
 
 ### How To Use
 
@@ -90,8 +91,8 @@ export default IconDemo;
 ## Tabs
 
 The **Tabs** component provides a reusable interface for displaying and navigating between specific tabs—namely `Presets` and `Settings` — from the default `Home` screen. It uses React Native’s `useNavigation` hook with a custom, strongly typed parameter that extends `NativeStackNavigationProps` and is based on a defined root stack parameter list. This ensures type-safe navigation by validating route names and parameters at compile time.
-Internally, the component is built using a custom `Icon` component alongside React Native’s `Text` and `Pressable` components, all wrapped within a `View` to create an interactive and accessible tab layout.
 
+Internally, the component is built using a custom `Icon` component alongside React Native’s `Text` and `Pressable` components, all wrapped within a `View` to create an interactive and accessible tab layout.
 
 ### How To Use
 
@@ -107,3 +108,39 @@ const  TabsDemo = (): JSX.Element => {
 }
 
 export default TabsDemo;
+```
+
+## Track
+
+The **Track** component provides a reusable interface for displaying and selecting individual tracks from the track list on the `Presets` screen. It accepts the props `idx`, `name`, and `bpm`, which represent the track’s position in the list, its title, and its tempo (beats per minute), respectively.
+
+Internally, the component is composed using a custom Icon component alongside React Native’s Text and View components, all wrapped within a Pressable. Styling is applied via the `StyleSheet` API to create an interactive, accessible, and visually consistent layout for track selection.
+
+### How To Use
+
+```jsx
+import { Track } from './src/components/All';
+
+interface TrackProps {
+  idx?: number;
+  bpm?: number;
+  name?: string;
+}
+
+const  TrackDemo = ({idx=0, name, bpm}: TrackProps): JSX.Element => {
+  return (
+    <View>
+      <Track idx={idx} name={name} bpm={bpm} />
+    </View>
+  );
+}
+
+export default TrackDemo;
+```
+
+**Props**
+
+- idx _`{number}`_ This represents the selected id/index of the track. By default, it is 0.
+- bpm _`{number}`_ This represents the tempo or beats per minute of the track.
+- name _`{string}`_ This represents the name of the track.
+  <br/>
