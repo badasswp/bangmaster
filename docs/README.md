@@ -9,3 +9,8 @@ This documentation serves as a guide and reference point for developers working 
   - [Icon](./components/README.md#icon)
   - [Tabs](./components/README.md#tabs)
   - [Track](./components/README.md#track)
+
+## Screens
+
+- [Screens](./screens/README.md)
+  - [Home](./screens/README.md#home)
