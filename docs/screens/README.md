@@ -44,7 +44,7 @@ The screen renders a list of tracks sourced from a predefined data template, map
 ### How To Use
 
 ```jsx
-import { Presets } from './src/components/All';
+import { Presets } from './src/screens/All';
 
 const  PresetsDemo = (): JSX.Element => {
   return (
