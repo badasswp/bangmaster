@@ -5,6 +5,7 @@ This section documents the reusable screens available in the project. Each scree
 ## Table of Contents
 
 - [Home](#home)
+- [Presets](#presets)
 
 ## Home
 
@@ -32,3 +33,25 @@ export default HomeDemo;
 
 ```
   <br/>
+
+## Presets
+
+The **Presets** screen provides an intuitive interface for browsing and selecting available tracks. Similar to the ``Home` screen, it leverages React Native’s `useNavigation` hook with a custom, strongly typed configuration that extends `NativeStackNavigationProps` and is derived from a predefined root stack parameter list. This ensures type-safe navigation by validating route names and parameters at compile time.
+
+The screen renders a list of tracks sourced from a predefined data template, mapping each entry to a custom `Track` component. These components are nested within a React Native `ScrollView` to enable smooth vertical scrolling. Visual presentation and layout are handled using the React Native `StyleSheet` API.
+
+
+### How To Use
+
+```jsx
+import { Presets } from './src/screens/All';
+
+const  PresetsDemo = (): JSX.Element => {
+  return (
+    <View>
+      <Presets />
+    </View>
+  );
+}
+
+export default PresetsDemo;
