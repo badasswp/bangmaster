@@ -55,3 +55,28 @@ const  PresetsDemo = (): JSX.Element => {
 }
 
 export default PresetsDemo;
+
+```
+  <br/>
+
+## Settings
+
+The **Settings** screen provides an interface for displaying the application settings. Like the `Home` screen, It utilizes React Native’s `useNavigation` hook with a custom, strongly typed configuration that extends `NativeStackNavigationProps` and is derived from a defined root stack parameter list. This approach ensures type-safe navigation by validating route names and parameters at compile time.
+
+The screen is still under review and completion. Styling is applied using the React Native `StyleSheet` API.
+
+
+### How To Use
+
+```jsx
+import { Settings } from './src/screens/All';
+
+const  SettingsDemo = (): JSX.Element => {
+  return (
+    <View>
+      <Settings />
+    </View>
+  );
+}
+
+export default SettingsDemo;

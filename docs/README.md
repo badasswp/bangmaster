@@ -15,3 +15,4 @@ This documentation serves as a guide and reference point for developers working 
 - [Screens](./screens/README.md)
   - [Home](./screens/README.md#home)
   - [Presets](./screens/README.md#presets)
+  - [Settings](./screens/README.md#settings)
