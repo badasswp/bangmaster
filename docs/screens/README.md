@@ -66,7 +66,6 @@ The **Settings** screen provides an interface for displaying the application set
 
 The screen is still under review and completion. Styling is applied using the React Native `StyleSheet` API.
 
-
 ### How To Use
 
 ```jsx
