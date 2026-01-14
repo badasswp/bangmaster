@@ -6,6 +6,7 @@ This section documents the reusable screens available in the project. Each scree
 
 - [Home](#home)
 - [Presets](#presets)
+- [Settings](#settings)
 
 ## Home
 
