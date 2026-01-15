@@ -16,3 +16,8 @@ This documentation serves as a guide and reference point for developers working 
   - [Home](./screens/README.md#home)
   - [Presets](./screens/README.md#presets)
   - [Settings](./screens/README.md#settings)
+
+## Hooks
+
+- [Hooks](./hooks/README.md)
+  - [useSelection](./hooks/README.md#useselection)
