@@ -27,7 +27,7 @@ const useSelectionDemo = (): JSX.Element => {
     <View>
       <Text>`Track ${selection}`</Text>
       <Pressable onPress={handlePress}>
-	 <Text>Next Track</Text>
+	     <Text>Next Track</Text>
       </Pressable>
     </View>
   );
