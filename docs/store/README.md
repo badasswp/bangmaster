@@ -38,7 +38,7 @@ const trackSlice = createSlice({
 export const { updateSelection } = trackSlice.actions;
 export default trackSlice.reducer;
 
-import { trackSlice } from './src/store/slices;
+import { trackSlice } from './src/store/slices';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
