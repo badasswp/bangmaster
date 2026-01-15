@@ -4,7 +4,7 @@ This section documents the reusable slices available in the project. Each slice 
 
 ## Table of Contents
 
-- [trackSlice](#trackslice)
+- [TrackSlice](#trackslice)
 
 ## TrackSlice
 
