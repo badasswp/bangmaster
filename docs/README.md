@@ -21,3 +21,8 @@ This documentation serves as a guide and reference point for developers working 
 
 - [Hooks](./hooks/README.md)
   - [useSelection](./hooks/README.md#useselection)
+
+## Slices
+
+- [Slices](./store/README.md)
+  - [TrackSlice](./store/README.md#trackslice)
