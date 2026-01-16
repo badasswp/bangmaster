@@ -13,7 +13,7 @@ The **TrackSlice** is a Redux Toolkit slice responsible for managing track-relat
 Internally, `createSlice` accepts an object containing three required properties:
 
 * name – Defines the slice name and determines the key under which the reducer is mounted in the Redux store.
-* initialState – Specifies the default state returned before any actions are dispatched.
+* `initialState` – Specifies the default state returned before any actions are dispatched.
 * `reducers` – Contains reducer functions that handle state updates and automatically generate corresponding action creators.
 * 
 
