@@ -20,7 +20,6 @@ For TrackSlice, the slice name is set to track, and the initial state is an obje
 
 The updateSelection reducer is automatically exported as an action creator, while the slice reducer itself is exported as the default export. Together, these exports enable internal track state management by allowing components and middleware to dispatch actions that update the track selection in a predictable and centralized manner.
 
-
 ### How To Use
 
 ```js
