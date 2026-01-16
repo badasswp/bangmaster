@@ -10,7 +10,8 @@ This section documents the reusable slices available in the project. Each slice 
 
 The **TrackSlice** is a Redux Toolkit slice responsible for managing track-related state within the global Redux store. It is created using Redux Toolkit’s native `createSlice` API and exported as a slice reducer to be registered under the track key in the store configuration.
 
-Internally, createSlice accepts an object containing three required properties:
+Internally, `createSlice` accepts an object containing three required properties:
+
 * name – Defines the slice name and determines the key under which the reducer is mounted in the Redux store.
 * initialState – Specifies the default state returned before any actions are dispatched.
 * reducers – Contains reducer functions that handle state updates and automatically generate corresponding action creators.
