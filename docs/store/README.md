@@ -16,6 +16,7 @@ Internally, `createSlice` accepts an object containing three required properties
 * initialState – Specifies the default state returned before any actions are dispatched.
 * reducers – Contains reducer functions that handle state updates and automatically generate corresponding action creators.
 For TrackSlice, the slice name is set to track, and the initial state is an object with a selection property initialized to 0. The slice defines a single reducer, `updateSelection`, which receives the current state and an action object, and updates the selection value with the provided payload.
+
 The updateSelection reducer is automatically exported as an action creator, while the slice reducer itself is exported as the default export. Together, these exports enable internal track state management by allowing components and middleware to dispatch actions that update the track selection in a predictable and centralized manner.
 
 
