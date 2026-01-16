@@ -15,7 +15,6 @@ Internally, `createSlice` accepts an object containing three required properties
 * `name` – Defines the slice name and determines the key under which the reducer is mounted in the Redux store.
 * `initialState` – Specifies the default state returned before any actions are dispatched.
 * `reducers` – Contains reducer functions that handle state updates and automatically generate corresponding action creators.
-* 
 
 For TrackSlice, the slice name is set to track, and the initial state is an object with a selection property initialized to 0. The slice defines a single reducer, `updateSelection`, which receives the current state and an action object, and updates the selection value with the provided payload.
 
