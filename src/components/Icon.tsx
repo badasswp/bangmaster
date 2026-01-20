@@ -73,7 +73,10 @@ const Icon = ({
 	 */
 	const IconWrapper = ({ name = '' }: { name: string }): JSX.Element => {
 		return (
-			<View style={containerWrapperStyles as StyleProp<ViewStyle>}>
+			<View
+				testID="icon"
+				style={containerWrapperStyles as StyleProp<ViewStyle>}
+			>
 				<Svg
 					viewBox="0 0 24 24"
 					width={passedWidth || width}
