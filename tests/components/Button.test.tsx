@@ -1,44 +1,23 @@
 import * as React from 'react';
-import {
-	act,
-	fireEvent,
-	render,
-	RenderOptions,
-} from '@testing-library/react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { act, fireEvent, render } from '@testing-library/react-native';
 
 import Button from '../../src/components/Button';
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
-	return <NavigationContainer>{children}</NavigationContainer>;
-};
-
-export const customRender = (
-	ui: React.ReactElement,
-	options?: Omit<RenderOptions, 'wrapper'>
-) => {
-	return render(ui, { ...options, wrapper: Providers });
-};
-
 describe('Button', () => {
 	it('matches the snapshot', () => {
-		const container = customRender(
-			<Button id="btnSnapshot" text="Click Here" />
-		);
+		const container = render(<Button id="btnSnapshot" text="Click Here" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it('renders the children text', () => {
-		const { getByText } = customRender(
-			<Button id="btnText" text="Click Here" />
-		);
+		const { getByText } = render(<Button id="btnText" text="Click Here" />);
 
 		expect(getByText('Click Here')).toBeVisible();
 	});
 
 	it('uses the default styles', () => {
-		const { getByTestId, getByText } = customRender(
+		const { getByTestId, getByText } = render(
 			<Button id="btnDefault" text="Click Here" />
 		);
 
@@ -59,7 +38,7 @@ describe('Button', () => {
 
 	it('overrides the default styles with custom border styles of the button', () => {
 		const customStyles: object = { borderRadius: 10, borderWidth: 5 };
-		const { getByTestId, getByText } = customRender(
+		const { getByTestId, getByText } = render(
 			<Button id="btnSecondary" text="Click Here" style={customStyles} />
 		);
 
@@ -81,7 +60,7 @@ describe('Button', () => {
 	it('calls the onPress handler', async () => {
 		const handleClick = jest.fn();
 
-		const { getByTestId } = customRender(
+		const { getByTestId } = render(
 			<Button id="btnClick" text="Click Here" onClick={handleClick} />
 		);
 
