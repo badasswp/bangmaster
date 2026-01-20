@@ -26,3 +26,7 @@ jobs:
       - name: Check for linting errors
         run: |
           yarn lint
+
+      - name: Run tests & snapshot updates
+        run: |
+          yarn test -u
