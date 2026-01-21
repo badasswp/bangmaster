@@ -25,7 +25,7 @@ const Tabs = (): JSX.Element => {
 	const navigation = useNavigation<TabNavigationProp>();
 
 	return (
-		<View testID="Tabs" style={styles.tabs}>
+		<View testID="tabs" style={styles.tabs}>
 			<Pressable
 				testID="Presets"
 				style={styles.tab}
