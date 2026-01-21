@@ -34,7 +34,7 @@ describe('Tabs', () => {
 	it('uses the default styles', () => {
 		const { getByTestId } = render(<Tabs />);
 
-		const TabView = getByTestId('Tabs');
+		const TabView = getByTestId('tabs');
 
 		expect(TabView).toHaveStyle({
 			backgroundColor: '#2d2b43',

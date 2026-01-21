@@ -14,7 +14,7 @@ exports[`Tabs matches the snapshot 1`] = `
       "right": 0,
     }
   }
-  testID="Tabs"
+  testID="tabs"
 >
   <View
     accessibilityState={
