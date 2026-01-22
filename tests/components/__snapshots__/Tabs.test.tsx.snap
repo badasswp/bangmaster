@@ -51,7 +51,7 @@ exports[`Tabs matches the snapshot 1`] = `
         "width": "50%",
       }
     }
-    testID="Presets"
+    testID="presets"
   >
     <View
       style={
@@ -170,7 +170,7 @@ exports[`Tabs matches the snapshot 1`] = `
         "width": "50%",
       }
     }
-    testID="Settings"
+    testID="settings"
   >
     <View
       style={
