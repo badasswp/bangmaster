@@ -1,7 +1,7 @@
 import { act, fireEvent, render } from '@testing-library/react-native';
+import { Provider } from 'react-redux';
 
 import Track from '../../src/components/Track';
-import { Provider } from 'react-redux';
 import { store } from '../../src/store';
 
 const mockGoBack = jest.fn();
