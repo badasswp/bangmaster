@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { act, fireEvent, render } from '@testing-library/react-native';
+
 import Tabs from '../../src/components/Tabs';
 
 const mockNavigate = jest.fn();
