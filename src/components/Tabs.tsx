@@ -27,7 +27,7 @@ const Tabs = (): JSX.Element => {
 	return (
 		<View testID="tabs" style={styles.tabs}>
 			<Pressable
-				testID="Presets"
+				testID="presets"
 				style={styles.tab}
 				onPress={() => navigation.navigate('Presets')}
 			>
@@ -35,7 +35,7 @@ const Tabs = (): JSX.Element => {
 				<Text style={styles.tabText}>Presets</Text>
 			</Pressable>
 			<Pressable
-				testID="Settings"
+				testID="settings"
 				style={styles.tab}
 				onPress={() => navigation.navigate('Settings')}
 			>
