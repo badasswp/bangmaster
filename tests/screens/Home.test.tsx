@@ -5,7 +5,6 @@ import { store } from '../../src/store';
 import { tracks } from '../../src/utils/data';
 import Home from '../../src/screens/Home';
 
-
 jest.mock('@react-navigation/native', () => ({
 	...jest.requireActual('@react-navigation/native'),
 	useNavigation: () => ({
@@ -56,7 +55,7 @@ const renderWithRedux = (ui: React.ReactElement) => {
 
 describe('Home Screen', () => {
 	afterEach(() => jest.clearAllMocks());
-	
+
 	it('matches snapshot', () => {
 		const container = renderWithRedux(<Home />);
 		expect(container).toMatchSnapshot();
