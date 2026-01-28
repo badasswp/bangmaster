@@ -1,5 +1,6 @@
 import { render, act, fireEvent } from '@testing-library/react-native';
 import { Provider } from 'react-redux';
+
 import { store } from '../../src/store';
 import { tracks } from '../../src/utils/data';
 import Home from '../../src/screens/Home';
