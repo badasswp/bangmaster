@@ -54,6 +54,7 @@ jest.mock('@react-native-community/slider', () => {
 const renderWithRedux = (ui: React.ReactElement) => {
 	return render(<Provider store={store}>{ui}</Provider>);
 };
+
 describe('Home Screen', () => {
 	afterEach(() => jest.clearAllMocks());
 	it('matches snapshot', () => {
