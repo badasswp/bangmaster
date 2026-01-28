@@ -111,18 +111,20 @@ const Home = (): JSX.Element => {
 	};
 
 	return (
-		<View style={styles.container}>
+		<View testID="homeView" style={styles.container}>
 			<View style={styles.trackDetails}>
 				<Text style={styles.trackName}>{track.name}</Text>
 				<Text style={styles.trackDuration}>{track.duration}</Text>
 			</View>
 			<View style={styles.trackButtons}>
 				<Button
+					id="prevBtn"
 					text="-"
 					onClick={handlePrev}
 					textStyles={styles.trackButtonTempo}
 				/>
 				<Button
+					id="playBtn"
 					text={isPlaying ? 'Stop' : 'Play'}
 					iconStyles={styles.playIcon}
 					style={styles.playButton}
@@ -130,16 +132,18 @@ const Home = (): JSX.Element => {
 					textStyles={styles.playButtonText}
 				/>
 				<Button
+					id="nextBtn"
 					text="+"
 					onClick={handleNext}
 					textStyles={styles.trackButtonTempo}
 				/>
 			</View>
-			<View style={styles.trackDetails}>
+			<View testID="trackDetails" style={styles.trackDetails}>
 				<Text style={styles.bpm}>{bpm} bpm</Text>
 			</View>
-			<View style={styles.trackTempo}>
+			<View testID="slider" style={styles.trackTempo}>
 				<Slider
+					testID="trackSlider"
 					minimumValue={track.bpm - 100}
 					maximumValue={track.bpm + 100}
 					value={track.bpm}
