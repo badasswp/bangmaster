@@ -57,6 +57,7 @@ const renderWithRedux = (ui: React.ReactElement) => {
 
 describe('Home Screen', () => {
 	afterEach(() => jest.clearAllMocks());
+	
 	it('matches snapshot', () => {
 		const container = renderWithRedux(<Home />);
 		expect(container).toMatchSnapshot();
