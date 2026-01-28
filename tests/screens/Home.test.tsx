@@ -5,7 +5,6 @@ import { store } from '../../src/store';
 import { tracks } from '../../src/utils/data';
 import Home from '../../src/screens/Home';
 
-const mockNavigate = jest.fn();
 
 jest.mock('@react-navigation/native', () => ({
 	...jest.requireActual('@react-navigation/native'),
