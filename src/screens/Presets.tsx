@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView, StyleSheet, View, Text, Pressable } from 'react-native';
+import { ScrollView, StyleSheet, View, Text } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { Track } from '../components/All';
@@ -27,14 +27,18 @@ const Presets = (): JSX.Element => {
 	const navigation = useNavigation<PresetsScreenNavigationProp>();
 
 	return (
-		<View style={styles.container}>
-			<View style={styles.header}>
-				<Text style={styles.caption}>Presets</Text>
+		<View style={styles.container} testID="presetsView">
+			<View style={styles.header} testID="presetsHeader">
+				<Text style={styles.caption} testID="presetsCaption">
+					Presets
+				</Text>
 				<View style={styles.titleContainer}>
-					<Text style={styles.title}>Select A Track</Text>
+					<Text style={styles.title} testID="presetsTitle">
+						Select A Track
+					</Text>
 				</View>
 			</View>
-			<View style={styles.body}>
+			<View style={styles.body} testID="presetsBody">
 				<ScrollView
 					alwaysBounceVertical={true}
 					showsVerticalScrollIndicator={false}

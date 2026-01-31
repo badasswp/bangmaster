@@ -46,7 +46,7 @@ describe('Track snapshot', () => {
 			</Provider>
 		);
 
-		const TrackBtn = getByTestId('track');
+		const TrackBtn = getByTestId('track-0');
 
 		expect(TrackBtn).toHaveStyle({
 			borderBottomWidth: 1,
@@ -65,7 +65,7 @@ describe('Track snapshot', () => {
 			</Provider>
 		);
 
-		const TrackBtn = getByTestId('track');
+		const TrackBtn = getByTestId('track-0');
 
 		await act(async () => {
 			fireEvent.press(TrackBtn);

@@ -41,7 +41,7 @@ exports[`Track snapshot matches the snapshot 1`] = `
       "padding": 20,
     }
   }
-  testID="track"
+  testID="track-0"
 >
   <Text
     style={
