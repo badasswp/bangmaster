@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Screen matches snapshot 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#3c3b52",
+      "flex": 1,
+      "gap": 20,
+      "justifyContent": "center",
+    }
+  }
+/>
+`;
