@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView, StyleSheet, View, Text, Pressable } from 'react-native';
+import { ScrollView, StyleSheet, View, Text } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { Track } from '../components/All';
