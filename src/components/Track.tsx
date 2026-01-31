@@ -42,7 +42,11 @@ const Track = ({ idx = 0, name, bpm }: TrackProps): JSX.Element => {
 	};
 
 	return (
-		<Pressable testID="track" style={styles.container} onPress={handlePress}>
+		<Pressable
+			testID={`track-${idx}`}
+			style={styles.container}
+			onPress={handlePress}
+		>
 			<Text style={styles.name}>{name}</Text>
 			<View style={styles.details}>
 				<Icon
