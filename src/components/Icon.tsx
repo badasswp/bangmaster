@@ -60,6 +60,9 @@ const Icon = ({
 		color: passedColor,
 	} = styles as any;
 
+	// Get icon name.
+	const testId = name;
+
 	/**
 	 * IconWrapper component.
 	 *
@@ -74,7 +77,7 @@ const Icon = ({
 	const IconWrapper = ({ name = '' }: { name: string }): JSX.Element => {
 		return (
 			<View
-				testID="icon"
+				testID={testId}
 				style={containerWrapperStyles as StyleProp<ViewStyle>}
 			>
 				<Svg
