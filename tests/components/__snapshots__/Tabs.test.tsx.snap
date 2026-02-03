@@ -51,7 +51,7 @@ exports[`Tabs matches the snapshot 1`] = `
         "width": "50%",
       }
     }
-    testID="presets"
+    testID="presets-tab"
   >
     <View
       style={
@@ -61,7 +61,7 @@ exports[`Tabs matches the snapshot 1`] = `
           "marginTop": -5,
         }
       }
-      testID="icon"
+      testID="presets"
     >
       <RNSVGSvgView
         align="xMidYMid"
@@ -170,7 +170,7 @@ exports[`Tabs matches the snapshot 1`] = `
         "width": "50%",
       }
     }
-    testID="settings"
+    testID="settings-tab"
   >
     <View
       style={
@@ -180,7 +180,7 @@ exports[`Tabs matches the snapshot 1`] = `
           "marginTop": -5,
         }
       }
-      testID="icon"
+      testID="settings"
     >
       <RNSVGSvgView
         align="xMidYMid"

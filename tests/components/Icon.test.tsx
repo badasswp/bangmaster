@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react-native';
+
 import Icon from '../../src/components/Icon';
 
 describe('Icon', () => {
@@ -8,16 +9,16 @@ describe('Icon', () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it('renders the icon name', () => {
+	it('renders the correct icon on the screen', () => {
 		const { getByTestId } = render(<Icon name="play" />);
 
-		expect(getByTestId('icon')).toBeVisible();
+		expect(getByTestId('play')).toBeVisible();
 	});
 
 	it('uses the default styles', () => {
 		const { getByTestId } = render(<Icon name="play" />);
 
-		const iconView = getByTestId('icon');
+		const iconView = getByTestId('play');
 
 		expect(iconView).toHaveStyle({
 			alignItems: 'center',
@@ -32,7 +33,7 @@ describe('Icon', () => {
 			<Icon name="play" containerStyles={customStyles} />
 		);
 
-		const IconView = getByTestId('icon');
+		const IconView = getByTestId('play');
 
 		expect(IconView).toHaveStyle({
 			alignItems: 'center',

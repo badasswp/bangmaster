@@ -69,7 +69,7 @@ exports[`Track snapshot matches the snapshot 1`] = `
           "marginTop": 0,
         }
       }
-      testID="icon"
+      testID="presets"
     >
       <RNSVGSvgView
         align="xMidYMid"
