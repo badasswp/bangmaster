@@ -52,8 +52,8 @@ describe('Tabs', () => {
 	it('calls the onPress handlers of Preset and Settings tabs', async () => {
 		const { getByTestId } = render(<Tabs />);
 
-		const Presets = getByTestId('presets');
-		const Settings = getByTestId('settings');
+		const Presets = getByTestId('presets-tab');
+		const Settings = getByTestId('settings-tab');
 
 		await act(async () => {
 			fireEvent.press(Presets);
