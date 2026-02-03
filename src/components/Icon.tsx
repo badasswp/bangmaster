@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
-import { Play, Presets, Settings, Stop } from '../icons/All';
+import { Play, Presets, Settings, Stop, Search } from '../icons/All';
 
 export interface IconProps {
 	name?: string;
@@ -102,6 +102,9 @@ const Icon = ({
 
 		case 'stop':
 			return <IconWrapper name={Stop} />;
+
+		case 'search':
+			return <IconWrapper name={Search} />;
 
 		default:
 			return null;
