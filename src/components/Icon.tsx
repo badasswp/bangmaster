@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
-import { Play, Presets, Settings, Stop, Search } from '../icons/All';
+import { AngleBack, Play, Presets, Search, Settings, Stop } from '../icons/All';
 
 export interface IconProps {
 	name?: string;
@@ -94,6 +94,9 @@ const Icon = ({
 	};
 
 	switch (name) {
+		case 'angleBack':
+			return <IconWrapper name={AngleBack} />;
+
 		case 'play':
 			return <IconWrapper name={Play} />;
 
