@@ -94,6 +94,9 @@ const Icon = ({
 	};
 
 	switch (name) {
+		case 'angleBack':
+			return <IconWrapper name={AngleBack} />;
+
 		case 'play':
 			return <IconWrapper name={Play} />;
 
@@ -108,9 +111,6 @@ const Icon = ({
 
 		case 'search':
 			return <IconWrapper name={Search} />;
-
-		case 'angleBack':
-			return <IconWrapper name={AngleBack} />;
 
 		default:
 			return null;
