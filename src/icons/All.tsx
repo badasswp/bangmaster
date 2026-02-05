@@ -5,4 +5,4 @@ import Stop from './Stop';
 import Search from './Search';
 import AngleBack from './AngleBack';
 
-export { Play, Presets, Settings, Stop, Search, AngleBack };
+export { AngleBack, Play, Presets, Search, Settings, Stop };
