@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { StyleProp, View, ViewStyle } from 'react-native';
 import { Svg, Path } from 'react-native-svg';
 
-import { Play, Presets, Settings, Stop, Search, AngleBack } from '../icons/All';
+import { AngleBack, Play, Presets, Search, Settings, Stop } from '../icons/All';
 
 export interface IconProps {
 	name?: string;
