@@ -14,6 +14,7 @@ jest.mock('@react-navigation/native', () => ({
 describe('Header component', () => {
 	it('renders Header snapshot', () => {
 		const container = render(<Header />);
+		
 		expect(container).toMatchSnapshot();
 	});
 
