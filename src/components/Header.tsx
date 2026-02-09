@@ -30,8 +30,6 @@ const Header = (): JSX.Element => {
 
 	return (
 		<View style={styles.container} testID="headerContainer">
-			<Text style={styles.bangMasterCaption}>Bangmaster</Text>
-
 			<View>
 				<Pressable onPress={() => navigation.goBack()} testID="searchButton">
 					<Icon
@@ -59,17 +57,6 @@ const styles = StyleSheet.create({
 		top: 0,
 		left: 0,
 		zIndex: 10,
-	},
-
-	bangMasterCaption: {
-		color: 'white',
-		fontFamily: APP_FONT,
-		fontSize: 18, //APP_FONT_SIZE,
-		fontWeight: '700',
-		textAlign: 'center',
-		width: 'auto',
-		lineHeight: APP_FONT_SIZE,
-		letterSpacing: -1,
 	},
 
 	navIcon: {
