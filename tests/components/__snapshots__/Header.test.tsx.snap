@@ -19,22 +19,6 @@ exports[`Header component renders Header snapshot 1`] = `
   }
   testID="headerContainer"
 >
-  <Text
-    style={
-      {
-        "color": "white",
-        "fontFamily": "Helvetica Neue",
-        "fontSize": 18,
-        "fontWeight": "700",
-        "letterSpacing": -1,
-        "lineHeight": 16,
-        "textAlign": "center",
-        "width": "auto",
-      }
-    }
-  >
-    Bangmaster
-  </Text>
   <View>
     <View
       accessibilityState={
