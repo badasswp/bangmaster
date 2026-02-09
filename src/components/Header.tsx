@@ -29,7 +29,7 @@ const Header = (): JSX.Element => {
 	const navigation = useNavigation<NotificationsScreenNavigationProp>();
 
 	return (
-		<View style={styles.container}>
+		<View style={styles.container} testID="headerContainer">
 			<Text style={styles.bangMasterCaption}>Bangmaster</Text>
 
 			<View>
