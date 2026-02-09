@@ -29,7 +29,9 @@ describe('Header component', () => {
 
 	it('displays the correct styles', () => {
 		const { getByTestId } = render(<Header />);
+		
 		const headerContainer = getByTestId('headerContainer');
+		
 		expect(headerContainer).toHaveStyle({
 			width: '100%',
 			display: 'flex',
