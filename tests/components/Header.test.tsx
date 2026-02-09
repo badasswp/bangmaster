@@ -49,6 +49,7 @@ describe('Header component', () => {
 
 	it('mocks the navigation when the onPress handler of the icon is called', async () => {
 		const { getByTestId } = render(<Header />);
+		
 		const searchIconBtn = getByTestId('searchButton');
 
 		await act(async () => {
