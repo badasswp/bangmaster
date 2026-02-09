@@ -7,12 +7,12 @@ import Icon from './Icon';
 import { APP_FONT, APP_FONT_SIZE } from '../utils/constants';
 
 type RootStackParamList = {
-	Notifications: undefined;
+	SearchScreen: undefined;
 };
 
 type NotificationsScreenNavigationProp = NativeStackNavigationProp<
 	RootStackParamList,
-	'Notifications'
+	'SearchScreen'
 >;
 
 /**
