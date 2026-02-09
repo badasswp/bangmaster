@@ -19,8 +19,10 @@ describe('Header component', () => {
 
 	it('displays the label and icon', () => {
 		const { getByText, getByTestId } = render(<Header />);
+		
 		const bangMasterCaption = getByText('Bangmaster');
 		const searchIconBtn = getByTestId('searchButton');
+		
 		expect(bangMasterCaption).toBeVisible();
 		expect(searchIconBtn).toBeVisible();
 	});
