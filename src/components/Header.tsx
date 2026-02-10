@@ -34,7 +34,7 @@ const Header = (): JSX.Element => {
 				<Pressable onPress={() => navigation.goBack()} testID="searchButton">
 					<Icon
 						name="search"
-						color="white"
+						color="#fff"
 						containerStyles={styles.navIcon}
 						weight={2}
 					/>
