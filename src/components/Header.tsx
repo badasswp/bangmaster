@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
 
 	navIcon: {
 		alignItems: 'flex-end',
-		color: 'white',
 	},
 });
 
