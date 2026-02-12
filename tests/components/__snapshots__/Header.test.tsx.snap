@@ -56,7 +56,6 @@ exports[`Header component renders Header snapshot 1`] = `
         style={
           {
             "alignItems": "flex-end",
-            "color": "white",
             "justifyContent": "center",
             "marginTop": -5,
           }
@@ -67,7 +66,7 @@ exports[`Header component renders Header snapshot 1`] = `
           align="xMidYMid"
           bbHeight={24}
           bbWidth={24}
-          color="white"
+          color="#fff"
           fill="none"
           focusable={false}
           height={24}
