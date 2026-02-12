@@ -47,8 +47,8 @@ const Search = (): JSX.Element => {
 						testID="TrackInput"
 						style={styles.input}
 						value={searchTrack}
-						placeholder="Search Track"
-						placeholderTextColor={'rgba(0,0,0,0.3)'}
+						placeholder="Type in the track name..."
+						placeholderTextColor={'#666'}
 						onChangeText={handleChange}
 					/>
 				</View>
@@ -80,14 +80,14 @@ const styles = StyleSheet.create({
 		paddingTop: 75,
 		paddingLeft: 20,
 	},
+
 	input: {
-		borderColor: '#fff',
-		backgroundColor: '#fff',
-		width: '96%',
-		borderWidth: 2,
-		paddingHorizontal: 10,
-		paddingVertical: 10,
-		borderRadius: 10,
+		borderColor: 'none',
+		backgroundColor: 'transparent',
+		fontSize: 18,
+		paddingHorizontal: 0,
+		paddingTop: 20,
+		color: '#fff',
 	},
 
 	caption: {
