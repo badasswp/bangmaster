@@ -34,7 +34,8 @@
 		"react-native-svg": "15.12.1",
 		"react-native-web": "^0.21.0",
 		"react-redux": "^9.2.0",
-		"redux": "^5.0.1"
+		"redux": "^5.0.1",
+		"wrap-ansi": "^9.0.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.25.2",
