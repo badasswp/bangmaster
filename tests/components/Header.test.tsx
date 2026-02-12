@@ -2,12 +2,12 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 
 import Header from '../../src/components/Header';
 
-const mockBack = jest.fn();
+const mockNavigate = jest.fn();
 
 jest.mock('@react-navigation/native', () => ({
 	...jest.requireActual('@react-navigation/native'),
 	useNavigation: () => ({
-		goBack: mockBack,
+		navigate: mockNavigate,
 	}),
 }));
 
@@ -34,15 +34,11 @@ describe('Header component', () => {
 		expect(headerContainer).toHaveStyle({
 			width: '100%',
 			display: 'flex',
-			flexDirection: 'row',
-			justifyContent: 'space-between',
-			alignItems: 'center',
-			backgroundColor: '#2d2b43',
-			padding: 20,
+			alignItems: 'flex-end',
 			position: 'absolute',
-			top: 0,
+			paddingHorizontal: 25,
+			top: 75,
 			left: 0,
-			zIndex: 10,
 		});
 	});
 
@@ -55,6 +51,6 @@ describe('Header component', () => {
 			fireEvent.press(searchIconBtn);
 		});
 
-		expect(mockBack).toHaveBeenCalled();
+		expect(mockNavigate).toHaveBeenCalled();
 	});
 });
