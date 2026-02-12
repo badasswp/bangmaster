@@ -4,22 +4,24 @@ exports[`Header component renders Header snapshot 1`] = `
 <View
   style={
     {
-      "alignItems": "center",
-      "backgroundColor": "#2d2b43",
+      "alignItems": "flex-end",
       "display": "flex",
-      "flexDirection": "row",
-      "justifyContent": "space-between",
       "left": 0,
-      "padding": 20,
+      "paddingHorizontal": 25,
       "position": "absolute",
-      "top": 0,
+      "top": 75,
       "width": "100%",
-      "zIndex": 10,
     }
   }
   testID="headerContainer"
 >
-  <View>
+  <View
+    style={
+      {
+        "width": 30,
+      }
+    }
+  >
     <View
       accessibilityState={
         {
@@ -55,9 +57,10 @@ exports[`Header component renders Header snapshot 1`] = `
       <View
         style={
           {
-            "alignItems": "flex-end",
+            "alignItems": "center",
             "justifyContent": "center",
             "marginTop": -5,
+            "width": 30,
           }
         }
         testID="search"

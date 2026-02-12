@@ -1,19 +1,16 @@
 import React, { JSX } from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import Icon from './Icon';
-import { APP_FONT, APP_FONT_SIZE } from '../utils/constants';
 
 type RootStackParamList = {
-	SearchScreen: undefined;
+	Search: undefined;
 };
 
-type NotificationsScreenNavigationProp = NativeStackNavigationProp<
-	RootStackParamList,
-	'SearchScreen'
->;
+type NotificationsScreenNavigationProp =
+	NativeStackNavigationProp<RootStackParamList>;
 
 /**
  * Header component.
@@ -30,8 +27,11 @@ const Header = (): JSX.Element => {
 
 	return (
 		<View style={styles.container} testID="headerContainer">
-			<View>
-				<Pressable onPress={() => navigation.goBack()} testID="searchButton">
+			<View style={styles.navIcon}>
+				<Pressable
+					onPress={() => navigation.navigate('Search')}
+					testID="searchButton"
+				>
 					<Icon
 						name="search"
 						color="#fff"
@@ -48,19 +48,15 @@ const styles = StyleSheet.create({
 	container: {
 		width: '100%',
 		display: 'flex',
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-		alignItems: 'center',
-		backgroundColor: '#2d2b43',
-		padding: 20,
+		alignItems: 'flex-end',
 		position: 'absolute',
-		top: 0,
+		paddingHorizontal: 25,
+		top: 75,
 		left: 0,
-		zIndex: 10,
 	},
 
 	navIcon: {
-		alignItems: 'flex-end',
+		width: 30,
 	},
 });
 

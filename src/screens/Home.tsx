@@ -10,6 +10,7 @@ import { getAppFont } from '../utils/fonts';
 import { APP_BUTTON_COLOR, APP_THEME_COLOR } from '../utils/constants';
 import { TrackProps, tracks } from '../utils/data';
 import useSelection from '../store/hooks/useSelection';
+import Header from '../components/Header';
 
 type RootStackParamList = {
 	Home: undefined;
@@ -112,6 +113,7 @@ const Home = (): JSX.Element => {
 
 	return (
 		<View testID="homeView" style={styles.container}>
+			<Header />
 			<View style={styles.trackDetails}>
 				<Text style={styles.trackName}>{track.name}</Text>
 				<Text style={styles.trackDuration}>{track.duration}</Text>
