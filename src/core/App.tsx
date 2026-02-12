@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { store } from '../store';
 import { Provider } from 'react-redux';
 
-import { Home, Presets, Settings } from '../screens/All';
+import { Home, Presets, Search, Settings } from '../screens/All';
 
 /**
  * App component.
@@ -32,6 +32,7 @@ const App = (): JSX.Element => {
 				>
 					<Stack.Screen name="Home" component={Home} />
 					<Stack.Screen name="Presets" component={Presets} />
+					<Stack.Screen name="Search" component={Search} />
 					<Stack.Screen name="Settings" component={Settings} />
 				</Stack.Navigator>
 			</NavigationContainer>
