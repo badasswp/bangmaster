@@ -3,7 +3,7 @@ import reducer, { updateSelection } from '../../../src/store/slices/trackSlice';
 describe('trackSlice', () => {
 	it('should return the initial state when passed an empty action', () => {
 		const initialState = {
-			selection: 0,
+			selection: 1,
 		};
 
 		const result = reducer(undefined, { type: '' });

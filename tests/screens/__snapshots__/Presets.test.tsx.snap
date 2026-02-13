@@ -111,7 +111,7 @@ exports[`Presets Screen matches snapshot 1`] = `
               "padding": 20,
             }
           }
-          testID="track-0"
+          testID="track-1"
         >
           <Text
             style={
@@ -261,7 +261,7 @@ exports[`Presets Screen matches snapshot 1`] = `
               "padding": 20,
             }
           }
-          testID="track-1"
+          testID="track-2"
         >
           <Text
             style={
@@ -411,7 +411,7 @@ exports[`Presets Screen matches snapshot 1`] = `
               "padding": 20,
             }
           }
-          testID="track-2"
+          testID="track-3"
         >
           <Text
             style={
@@ -561,7 +561,7 @@ exports[`Presets Screen matches snapshot 1`] = `
               "padding": 20,
             }
           }
-          testID="track-3"
+          testID="track-4"
         >
           <Text
             style={
