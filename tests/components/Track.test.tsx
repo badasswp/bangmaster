@@ -42,11 +42,11 @@ describe('Track snapshot', () => {
 	it('uses the default styles', () => {
 		const { getByTestId } = render(
 			<Provider store={store}>
-				<Track />
+				<Track trackId={1} />
 			</Provider>
 		);
 
-		const TrackBtn = getByTestId('track-0');
+		const TrackBtn = getByTestId('track-1');
 
 		expect(TrackBtn).toHaveStyle({
 			borderBottomWidth: 1,
@@ -61,11 +61,11 @@ describe('Track snapshot', () => {
 	it('calls the onPress handler of the TrackBtn', async () => {
 		const { getByTestId } = render(
 			<Provider store={store}>
-				<Track />
+				<Track trackId={1} />
 			</Provider>
 		);
 
-		const TrackBtn = getByTestId('track-0');
+		const TrackBtn = getByTestId('track-1');
 
 		await act(async () => {
 			fireEvent.press(TrackBtn);

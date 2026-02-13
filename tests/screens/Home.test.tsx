@@ -19,7 +19,7 @@ const mockDispatch = jest.fn();
 
 jest.mock('react-redux', () => ({
 	...jest.requireActual('react-redux'),
-	useSelector: (selector: any) => selector({ track: { selection: 0 } }),
+	useSelector: (selector: any) => selector({ track: { selection: 1 } }),
 	useDispatch: () => mockDispatch,
 }));
 

@@ -8,9 +8,9 @@ import { getAppFont } from '../utils/fonts';
 import useSelection from '../store/hooks/useSelection';
 
 interface TrackProps {
-	idx?: number;
 	bpm?: number;
 	name?: string;
+	trackId?: number | null;
 }
 
 type RootStackParamList = {
@@ -25,25 +25,27 @@ type TrackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  * This component is used to display the track
  * shown on the scrollview list items in the Presets screen.
  *
- * @param {TrackProps} props      Track props.
- * @param {string}     props.name Name of the Track.
- * @param {number}     props.bpm  Beats per minute for track.
- * @param {number}     props.idx  Index of selected track.
+ * @param {TrackProps}  props         Track props.
+ * @param {string}      props.name    Name of the Track.
+ * @param {number}      props.bpm     Beats per minute for track.
+ * @param {number|null} props.trackId Track ID.
  *
  * @returns {JSX.Element} The Track component.
  */
-const Track = ({ idx = 0, name, bpm }: TrackProps): JSX.Element => {
+const Track = ({ name, bpm, trackId = null }: TrackProps): JSX.Element => {
 	const navigation = useNavigation<TrackNavigationProp>();
 	const { setSelection } = useSelection();
 
 	const handlePress = () => {
-		setSelection(idx);
+		if (trackId) {
+			setSelection(trackId);
+		}
 		navigation.goBack();
 	};
 
 	return (
 		<Pressable
-			testID={`track-${idx}`}
+			testID={`track-${trackId}`}
 			style={styles.container}
 			onPress={handlePress}
 		>
