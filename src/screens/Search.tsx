@@ -59,8 +59,8 @@ const Search = (): JSX.Element => {
 					showsVerticalScrollIndicator={false}
 				>
 					{filteredTracks &&
-						filteredTracks.map(({ name, bpm }, index) => (
-							<Track key={index} idx={index} name={name} bpm={bpm}></Track>
+						filteredTracks.map(({ name, bpm, trackId }, index) => (
+							<Track key={index} trackId={trackId} name={name} bpm={bpm} />
 						))}
 				</ScrollView>
 			</View>

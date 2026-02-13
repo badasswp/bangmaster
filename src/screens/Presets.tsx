@@ -44,8 +44,8 @@ const Presets = (): JSX.Element => {
 					showsVerticalScrollIndicator={false}
 				>
 					{tracks &&
-						tracks.map(({ name, bpm }, index) => (
-							<Track key={index} idx={index} name={name} bpm={bpm}></Track>
+						tracks.map(({ name, bpm, trackId }, index) => (
+							<Track key={index} trackId={trackId} name={name} bpm={bpm} />
 						))}
 				</ScrollView>
 			</View>

@@ -8,9 +8,9 @@ import { getAppFont } from '../utils/fonts';
 import useSelection from '../store/hooks/useSelection';
 
 interface TrackProps {
-	idx?: number;
 	bpm?: number;
 	name?: string;
+	trackId?: number | null;
 }
 
 type RootStackParamList = {
@@ -32,18 +32,20 @@ type TrackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  *
  * @returns {JSX.Element} The Track component.
  */
-const Track = ({ idx = 0, name, bpm }: TrackProps): JSX.Element => {
+const Track = ({ name, bpm, trackId = null }: TrackProps): JSX.Element => {
 	const navigation = useNavigation<TrackNavigationProp>();
 	const { setSelection } = useSelection();
 
 	const handlePress = () => {
-		setSelection(idx);
+		if (trackId) {
+			setSelection(trackId);
+		}
 		navigation.goBack();
 	};
 
 	return (
 		<Pressable
-			testID={`track-${idx}`}
+			testID={`track-${trackId}`}
 			style={styles.container}
 			onPress={handlePress}
 		>
