@@ -30,17 +30,24 @@ const Home = (): JSX.Element => {
 	const navigation = useNavigation<HomeScreenNavigationProp>();
 
 	const { selection, setSelection } = useSelection();
-	const [track, setTrack] = useState<TrackProps>(tracks[selection]);
+	const trackPosition = selection - 1;
+	const [track, setTrack] = useState<TrackProps>(tracks[trackPosition]);
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const player = useAudioPlayer(track.beat);
 	const [bpm, setBpm] = useState(track.bpm);
 
 	useEffect(() => {
-		setTrack(tracks[selection]);
-		setBpm(tracks[selection].bpm);
+		// Get the right track position.
+		const trackPosition = selection - 1;
+
+		// Set track properties on track change.
+		setTrack(tracks[trackPosition]);
+		setBpm(tracks[trackPosition].bpm);
+
+		// Stop play.
 		stopPlay();
-	}, [selection]);
+	}, [trackPosition]);
 
 	/**
 	 * Start Play.
