@@ -110,7 +110,8 @@ const Home = (): JSX.Element => {
 	 *
 	 * This method handles the slide
 	 * functionality of the slider.
-	 * @param {number} 	props.tempo 	Track playing speed
+	 * 
+	 * @param {number} tempo Track playing speed.
 	 * @returns {void}
 	 */
 	const handleSlide = (tempo: number): void => {
