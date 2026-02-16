@@ -1,8 +1,10 @@
 import { act, fireEvent, render, within } from '@testing-library/react-native';
-import Search from '../../src/screens/Search';
-import { APP_THEME_COLOR } from '../../src/utils/constants';
 import { Provider } from 'react-redux';
+
 import { store } from '../../src/store';
+import { APP_THEME_COLOR } from '../../src/utils/constants';
+
+import Search from '../../src/screens/Search';
 
 const mockBack = jest.fn();
 
