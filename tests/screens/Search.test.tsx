@@ -42,7 +42,9 @@ describe('Unit tests for Search Screen', () => {
 
 	it('matches the styles', () => {
 		const { getByTestId } = renderWithRedux(<Search />);
+
 		const searchView = getByTestId('searchView');
+
 		expect(searchView).toHaveStyle({
 			flex: 1,
 			backgroundColor: APP_THEME_COLOR,
