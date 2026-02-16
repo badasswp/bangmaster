@@ -94,6 +94,20 @@ const Home = (): JSX.Element => {
 	};
 
 	/**
+	 * Handle Slide.
+	 *
+	 * This method handles the slide
+	 * functionality of the slider.
+	 *
+	 * @param {number} tempo Track playing speed.
+	 * @returns {void}
+	 */
+	const handleSlide = (tempo: number): void => {
+		setBpm(tempo);
+		player.setPlaybackRate(tempo / track.bpm, 'high');
+	};
+
+	/**
 	 * Next Selection.
 	 *
 	 * @returns {void}
@@ -156,7 +170,7 @@ const Home = (): JSX.Element => {
 					minimumValue={track.bpm - 100}
 					maximumValue={track.bpm + 100}
 					value={track.bpm}
-					onValueChange={value => setBpm(value)}
+					onValueChange={value => handleSlide(value)}
 					step={1}
 					thumbTintColor={APP_BUTTON_COLOR}
 					minimumTrackTintColor="red"
