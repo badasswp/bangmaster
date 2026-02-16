@@ -93,17 +93,6 @@ const Home = (): JSX.Element => {
 		startPlay();
 	};
 
-	/**
-	 * Adjust Tempo.
-	 *
-	 * This method handles the track tempo adjustment
-	 * functionality of the slider.
-	 * @param {number} 	props.tempo 	Track playing speed
-	 * @returns {void}
-	 */
-	const adjustTempo = (tempo: number): void => {
-		player.setPlaybackRate(tempo / track.bpm, 'high');
-	};
 
 	/**
 	 * Handle Slide.
