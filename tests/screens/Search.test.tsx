@@ -18,6 +18,7 @@ jest.mock('@react-navigation/native', () => ({
 		<>{children}</>
 	),
 }));
+
 const renderWithRedux = (ui: React.ReactElement) => {
 	return render(<Provider store={store}>{ui}</Provider>);
 };
