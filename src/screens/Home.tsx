@@ -93,13 +93,12 @@ const Home = (): JSX.Element => {
 		startPlay();
 	};
 
-
 	/**
 	 * Handle Slide.
 	 *
 	 * This method handles the slide
 	 * functionality of the slider.
-	 * 
+	 *
 	 * @param {number} tempo Track playing speed.
 	 * @returns {void}
 	 */
