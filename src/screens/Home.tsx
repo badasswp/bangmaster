@@ -1,22 +1,13 @@
 import React, { JSX, useState, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Text } from 'react-native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useAudioPlayer } from 'expo-audio';
 import Slider from '@react-native-community/slider';
 
-import { Button, Tabs } from '../components/All';
+import { Button, Header, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
 import { APP_BUTTON_COLOR, APP_THEME_COLOR } from '../utils/constants';
 import { TrackProps, tracks } from '../utils/data';
-import useSelection from '../store/hooks/useSelection';
-import Header from '../components/Header';
-
-type RootStackParamList = {
-	Home: undefined;
-};
-
-type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+import { useSelection } from '../store/hooks';
 
 /**
  * Home screen.
@@ -27,11 +18,8 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  * @returns {JSX.Element} The Home screen.
  */
 const Home = (): JSX.Element => {
-	const navigation = useNavigation<HomeScreenNavigationProp>();
-
 	const { selection, setSelection } = useSelection();
-	const trackPosition = selection - 1;
-	const [track, setTrack] = useState<TrackProps>(tracks[trackPosition]);
+	const [track, setTrack] = useState<TrackProps>(tracks[0]);
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const player = useAudioPlayer(track.beat);
@@ -39,15 +27,24 @@ const Home = (): JSX.Element => {
 
 	useEffect(() => {
 		// Get the right track position.
-		const trackPosition = selection - 1;
+		const index = getTrackIndex();
 
 		// Set track properties on track change.
-		setTrack(tracks[trackPosition]);
-		setBpm(tracks[trackPosition].bpm);
+		setTrack(tracks[index]);
+		setBpm(tracks[index].bpm);
 
 		// Stop play.
 		stopPlay();
-	}, [trackPosition]);
+	}, [selection]);
+
+	/**
+	 * Get Track Index.
+	 *
+	 * @returns {number}
+	 */
+	const getTrackIndex = (): number => {
+		return tracks.findIndex(({ trackId }) => trackId === selection);
+	};
 
 	/**
 	 * Start Play.
@@ -102,8 +99,8 @@ const Home = (): JSX.Element => {
 	 * @returns {void}
 	 */
 	const handleNext = (): void => {
-		const track = selection + 1;
-		setSelection(selection < tracks.length ? track : 1);
+		const index = getTrackIndex() + 1;
+		setSelection(tracks[index] ? tracks[index].trackId : tracks[0].trackId);
 		stopPlay();
 	};
 
@@ -113,8 +110,11 @@ const Home = (): JSX.Element => {
 	 * @returns {void}
 	 */
 	const handlePrev = (): void => {
-		const track = selection - 1;
-		setSelection(track > 0 ? track : tracks.length);
+		const index = getTrackIndex() - 1;
+		const lastIndex = tracks.length - 1;
+		setSelection(
+			tracks[index] ? tracks[index].trackId : tracks[lastIndex].trackId
+		);
 		stopPlay();
 	};
 
