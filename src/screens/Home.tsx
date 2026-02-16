@@ -7,7 +7,7 @@ import { Button, Header, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
 import { APP_BUTTON_COLOR, APP_THEME_COLOR } from '../utils/constants';
 import { TrackProps, tracks } from '../utils/data';
-import useSelection from '../store/hooks/useSelection';
+import { useSelection } from '../store/hooks';
 
 /**
  * Home screen.

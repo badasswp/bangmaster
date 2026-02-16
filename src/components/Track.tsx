@@ -5,7 +5,7 @@ import { StyleSheet, Pressable, View, Text } from 'react-native';
 
 import Icon from './Icon';
 import { getAppFont } from '../utils/fonts';
-import useSelection from '../store/hooks/useSelection';
+import { useSelection } from '../store/hooks';
 
 interface TrackProps {
 	bpm?: number;
