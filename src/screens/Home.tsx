@@ -115,7 +115,7 @@ const Home = (): JSX.Element => {
 	 */
 	const handleSlide = (tempo: number): void => {
 		setBpm(tempo);
-		adjustTempo(tempo);
+		player.setPlaybackRate(tempo / track.bpm, 'high');
 	};
 
 	/**
