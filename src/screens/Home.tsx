@@ -3,12 +3,11 @@ import { StyleSheet, View, Text } from 'react-native';
 import { useAudioPlayer } from 'expo-audio';
 import Slider from '@react-native-community/slider';
 
-import { Button, Tabs } from '../components/All';
+import { Button, Header, Tabs } from '../components/All';
 import { getAppFont } from '../utils/fonts';
 import { APP_BUTTON_COLOR, APP_THEME_COLOR } from '../utils/constants';
 import { TrackProps, tracks } from '../utils/data';
 import useSelection from '../store/hooks/useSelection';
-import Header from '../components/Header';
 
 /**
  * Home screen.
