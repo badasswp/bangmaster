@@ -31,8 +31,9 @@ describe('Unit tests for Search Screen', () => {
 
 	it('displays the list of tracks', () => {
 		const { getByTestId } = renderWithRedux(<Search />);
-		const trackList = getByTestId('tracksBody');
-		const { getByText } = within(trackList);
+		
+		const { getByText } = within(getByTestId('tracksBody'));
+		
 		expect(getByText('Worship Beat')).toBeVisible();
 		expect(getByText('3/4 Time')).toBeVisible();
 		expect(getByText('Praise Groove')).toBeVisible();
