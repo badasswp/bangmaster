@@ -1,7 +1,5 @@
 import React, { JSX, useState, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Text } from 'react-native';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useAudioPlayer } from 'expo-audio';
 import Slider from '@react-native-community/slider';
 
@@ -12,12 +10,6 @@ import { TrackProps, tracks } from '../utils/data';
 import useSelection from '../store/hooks/useSelection';
 import Header from '../components/Header';
 
-type RootStackParamList = {
-	Home: undefined;
-};
-
-type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
-
 /**
  * Home screen.
  *
@@ -27,8 +19,6 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
  * @returns {JSX.Element} The Home screen.
  */
 const Home = (): JSX.Element => {
-	const navigation = useNavigation<HomeScreenNavigationProp>();
-
 	const { selection, setSelection } = useSelection();
 	const trackPosition = selection - 1;
 	const [track, setTrack] = useState<TrackProps>(tracks[trackPosition]);
