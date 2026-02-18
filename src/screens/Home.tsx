@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
 	},
 
 	trackName: {
-		fontFamily: getAppFont('400'),
+		fontFamily: getAppFont('300'),
 		color: '#fff',
 		fontSize: 32,
 		fontWeight: 700,
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
 	},
 
 	trackDuration: {
-		fontFamily: getAppFont('400'),
+		fontFamily: getAppFont('300'),
 		color: 'orange',
 		fontSize: 20,
 		textAlign: 'center',
@@ -238,6 +238,7 @@ const styles = StyleSheet.create({
 
 	playButtonText: {
 		fontSize: 28,
+		fontFamily: getAppFont('300'),
 	},
 
 	bpm: {

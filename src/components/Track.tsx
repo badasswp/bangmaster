@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
 	name: {
 		color: '#fff',
 		fontSize: 18,
-		fontFamily: getAppFont('400'),
+		fontFamily: getAppFont('300'),
 		fontWeight: 400,
 	},
 
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 	bpm: {
 		color: '#fff',
 		fontSize: 16,
-		fontFamily: getAppFont('400'),
+		fontFamily: getAppFont('300'),
 		fontWeight: 400,
 		opacity: 0.3,
 	},

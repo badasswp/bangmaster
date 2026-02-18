@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 	caption: {
 		fontSize: 36,
 		fontWeight: 700,
-		fontFamily: getAppFont('400'),
+		fontFamily: getAppFont('300'),
 		color: '#fff',
 	},
 
