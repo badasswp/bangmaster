@@ -19,23 +19,36 @@ import { useSelection } from '../store/hooks';
  */
 const Home = (): JSX.Element => {
 	const { selection, setSelection } = useSelection();
-	const [track, setTrack] = useState<TrackProps>(tracks[0]);
 	const [isPlaying, setIsPlaying] = useState(false);
-
-	const player = useAudioPlayer(track.beat);
+	const [track, setTrack] = useState<TrackProps>(tracks[0]);
 	const [bpm, setBpm] = useState(track.bpm);
 
+	// Set Audio Player.
+	const player = useAudioPlayer(track.beat, {
+		updateInterval: 1,
+		keepAudioSessionActive: true,
+	});
+
+	/**
+	 * Update to current track
+	 * on new selection.
+	 */
 	useEffect(() => {
 		// Get the right track position.
 		const index = getTrackIndex();
 
-		// Set track properties on track change.
 		setTrack(tracks[index]);
 		setBpm(tracks[index].bpm);
-
-		// Stop play.
 		stopPlay();
 	}, [selection]);
+
+	/**
+	 * Set Player to loop.
+	 */
+	useEffect(() => {
+		if (!player) return;
+		player.loop = true;
+	}, [player]);
 
 	/**
 	 * Get Track Index.
@@ -58,6 +71,7 @@ const Home = (): JSX.Element => {
 	const startPlay = (): void => {
 		setIsPlaying(true);
 		player.seekTo(0);
+		player.setPlaybackRate(bpm / track.bpm, 'high');
 		player.play();
 	};
 
@@ -88,8 +102,6 @@ const Home = (): JSX.Element => {
 			return;
 		}
 
-		player.loop = true;
-		player.setPlaybackRate(bpm / track.bpm, 'high');
 		startPlay();
 	};
 
